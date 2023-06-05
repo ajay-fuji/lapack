@@ -7,6 +7,7 @@
  *
  */
 
+#include <stdio.h>
 #include "cblas.h"
 #include "cblas_f77.h"
 void cblas_dgemm(const CBLAS_LAYOUT layout, const CBLAS_TRANSPOSE TransA,
@@ -35,6 +36,7 @@ void cblas_dgemm(const CBLAS_LAYOUT layout, const CBLAS_TRANSPOSE TransA,
    #define F77_ldc ldc
 #endif
 
+   printf("lapack/CBLAS/src/cblas_dgemm.c::Layout:%d A-rows:%d A-col:%d B-col:%d\n", layout, M, N, K);
    extern int CBLAS_CallFromC;
    extern int RowMajorStrg;
    RowMajorStrg = 0;
